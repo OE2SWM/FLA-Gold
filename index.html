@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>FLA Gold – Fragen Trainer</title>
+  <meta name="theme-color" content="#0b3d2e" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🔥</div>
+      <div class="brandtext">
+        <div class="title">FLA Gold – Fragen Trainer</div>
+        <div class="subtitle">Seite 40–72 • Organisation / Taktik / Technik</div>
+      </div>
+    </div>
+    <button id="installBtn" class="btn btn-ghost" hidden>Installieren</button>
+  </header>
+
+  <main class="container">
+    <section class="controls card">
+      <div class="row">
+        <label class="field">
+          <span>Kapitel</span>
+          <select id="sectionSelect">
+            <option value="ALL">Alle (zufällig gemischt)</option>
+            <option value="Organisation">Organisation</option>
+            <option value="Taktik">Taktik</option>
+            <option value="Technik">Technik</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Modus</span>
+          <select id="modeSelect">
+            <option value="random">Zufall</option>
+            <option value="sequence">Reihenfolge</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="row">
+        <label class="field grow">
+          <span>Suchen (Nummer oder Text)</span>
+          <input id="searchInput" type="search" placeholder="z.B. 120 oder „Waldbrand“" />
+        </label>
+      </div>
+
+      <div class="row wrap">
+        <button id="newBtn" class="btn">Neue Frage</button>
+        <button id="toggleAnswerBtn" class="btn btn-secondary">Antwort anzeigen</button>
+        <button id="starBtn" class="btn btn-ghost" title="Merken / Favorit">☆ Merken</button>
+        <button id="listBtn" class="btn btn-ghost" title="Liste / Karte umschalten">☰ Liste</button>
+        <button id="resetBtn" class="btn btn-ghost" title="Fortschritt zurücksetzen">↺ Reset</button>
+      </div>
+
+      <div class="stats">
+        <span id="countSpan">–</span>
+        <span class="dot">•</span>
+        <span id="progressSpan">–</span>
+        <span class="dot">•</span>
+        <span id="favSpan">–</span>
+      </div>
+    </section>
+
+    <section id="cardView" class="card qa">
+      <div class="qmeta">
+        <span id="qBadge" class="badge">#</span>
+        <span id="qSection" class="pill">Kapitel</span>
+      </div>
+
+      <button id="questionBtn" class="qtext" aria-expanded="false"></button>
+
+      <div id="answerWrap" class="answer" hidden>
+        <div class="answerTitle">Antwort</div>
+        <div id="answerText" class="atext"></div>
+      </div>
+    </section>
+
+    <section id="listView" class="card list" hidden>
+      <div class="listHeader">
+        <div class="listTitle">Fragenliste</div>
+        <div class="listHint">Tippe eine Frage an, um sie als Karte zu öffnen.</div>
+      </div>
+      <div id="listContainer" class="listContainer"></div>
+    </section>
+
+    <footer class="footer">
+      Offline-fähig als PWA (Installierbar). Daten: 252 Fragen mit Antworten.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

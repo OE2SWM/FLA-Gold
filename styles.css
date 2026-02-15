@@ -1,0 +1,149 @@
+/* Mobile-first, simple, readable */
+:root{
+  --bg:#0a1110;
+  --card:#0f1b19;
+  --text:#eaf3f1;
+  --muted:#a7c0bb;
+  --accent:#21c59b;
+  --accent2:#2aa6ff;
+  --border:rgba(255,255,255,.10);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% -20%, rgba(33,197,155,.25), transparent 60%),
+              radial-gradient(1200px 800px at 120% 20%, rgba(42,166,255,.20), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+.topbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  background: rgba(10,17,16,.85);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.brand{display:flex; align-items:center; gap:12px;}
+.logo{
+  width:42px; height:42px;
+  display:grid; place-items:center;
+  border-radius:14px;
+  background: rgba(33,197,155,.12);
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+  font-size:20px;
+}
+.title{font-weight:800; letter-spacing:.2px}
+.subtitle{font-size:12px; color:var(--muted); margin-top:2px}
+
+.container{max-width:920px; margin:0 auto; padding:16px; padding-bottom:32px;}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:14px;
+}
+.controls{margin-bottom:14px}
+.row{display:flex; gap:12px; align-items:flex-end; margin-bottom:12px}
+.row.wrap{flex-wrap:wrap}
+.grow{flex:1}
+.field{display:flex; flex-direction:column; gap:6px; flex:1}
+.field span{font-size:12px; color:var(--muted)}
+input,select{
+  background: rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:12px 12px;
+  border-radius:14px;
+  outline:none;
+}
+input::placeholder{color: rgba(167,192,187,.75)}
+select{appearance:none}
+.btn{
+  background: var(--accent);
+  color: #04110d;
+  border:none;
+  padding:12px 14px;
+  border-radius:14px;
+  font-weight:800;
+  cursor:pointer;
+}
+.btn:active{transform: translateY(1px)}
+.btn-secondary{background: rgba(42,166,255,.95); color:#03101a}
+.btn-ghost{
+  background: rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  color: var(--text);
+}
+.stats{
+  display:flex; gap:8px; align-items:center;
+  color:var(--muted); font-size:12px;
+}
+.dot{opacity:.5}
+
+.qa{padding:16px}
+.qmeta{display:flex; gap:10px; align-items:center; margin-bottom:10px}
+.badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgba(33,197,155,.14);
+  border:1px solid var(--border);
+  font-weight:800;
+}
+.pill{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background: rgba(42,166,255,.12);
+  border:1px solid var(--border);
+  color: #d7eeff;
+  font-size:12px;
+  font-weight:700;
+}
+.qtext{
+  width:100%;
+  text-align:left;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.25;
+  padding: 8px 2px 2px 2px;
+  cursor:pointer;
+}
+.qtext:focus{outline:2px solid rgba(33,197,155,.35); border-radius:12px}
+.answer{
+  margin-top:14px;
+  padding:14px;
+  border-radius:16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+}
+.answerTitle{font-size:12px; color:var(--muted); margin-bottom:6px}
+.atext{font-size:15px; line-height:1.4; white-space:pre-wrap}
+.footer{margin-top:14px; color:var(--muted); font-size:12px; text-align:center}
+
+/* List view */
+.listHeader{display:flex; justify-content:space-between; gap:10px; align-items:baseline; margin-bottom:10px}
+.listTitle{font-weight:900}
+.listHint{color:var(--muted); font-size:12px}
+.listContainer{display:flex; flex-direction:column; gap:10px; max-height:65vh; overflow:auto; padding-right:4px}
+.listItem{
+  padding:12px;
+  border-radius:14px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  cursor:pointer;
+}
+.listItem:hover{background: rgba(255,255,255,.05)}
+.listItemTop{display:flex; justify-content:space-between; gap:10px; margin-bottom:6px}
+.small{font-size:12px; color:var(--muted)}
